@@ -1,5 +1,5 @@
 // Valid Anagram
-class Solution {
+/*class Solution {
 public:
     bool isAnagram(string s, string t) {
         string iterative;
@@ -29,4 +29,24 @@ unordered_map<char,int>t1;
         
         return true;
     }
-};
+};*/
+
+class Solution {
+public:
+bool isAnagram(string s, string t) {
+    if (s.size() != t.size()) return false;
+
+    unordered_map<char, int> count;
+
+    for (int i = 0; i < s.size(); i++) {
+        count[t[i]]++; 
+        count[s[i]]--; 
+    }
+
+    for (auto pair : count) {
+        if (pair.second != 0) return false;
+    }
+
+    return true;
+}
+};      

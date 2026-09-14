@@ -30,6 +30,5 @@ public:
     }
         mergecurr->next=(list1!=nullptr)?list1:list2;
         return mergehead->next;
-        
     }
 };
